@@ -3,10 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BizCraft — Grow Your Business Digitally</title>
-<meta name="description" content="BizCraft provides affordable digital cards, posters, websites and digital solutions for small businesses.">
+<meta name="theme-color" content="#6757e8">
+<meta name="description" content="BizCraft - Digital solutions for modern businesses.">
+<title>BizCraft — Digital Solutions for Businesses</title>
 
 <style>
+:root{
+  --primary:#6757e8;
+  --primary-dark:#5142d2;
+  --purple:#8b5cf6;
+  --text:#17152a;
+  --muted:#6f6b80;
+  --bg:#faf9fd;
+  --white:#ffffff;
+  --border:#e8e5f0;
+  --green:#25d366;
+  --shadow:0 20px 60px rgba(40,30,90,.10);
+}
+
 *{
   margin:0;
   padding:0;
@@ -19,8 +33,8 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f7f8fc;
-  color:#172033;
+  color:var(--text);
+  background:var(--bg);
   line-height:1.6;
 }
 
@@ -29,12 +43,8 @@ a{
   color:inherit;
 }
 
-button{
-  font-family:inherit;
-}
-
 .container{
-  width:min(1180px,92%);
+  width:min(1120px,92%);
   margin:auto;
 }
 
@@ -44,9 +54,9 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid #e8ebf2;
+  background:rgba(250,249,253,.95);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
 }
 
 .nav{
@@ -54,7 +64,6 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
 }
 
 .logo{
@@ -62,57 +71,50 @@ header{
   align-items:center;
   gap:10px;
   font-size:22px;
-  font-weight:800;
+  font-weight:900;
 }
 
 .logo-mark{
-  width:40px;
-  height:40px;
+  width:38px;
+  height:38px;
+  border-radius:12px;
   display:grid;
   place-items:center;
-  border-radius:12px;
-  color:#fff;
-  background:linear-gradient(135deg,#635bff,#8b5cf6);
-  box-shadow:0 8px 22px rgba(99,91,255,.25);
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--purple));
+  font-weight:900;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:26px;
   font-size:14px;
-  font-weight:600;
-  color:#626c7e;
+  font-weight:700;
+  color:#5d586c;
 }
 
 .nav-links a:hover{
-  color:#635bff;
+  color:var(--primary);
 }
 
-.nav-cta{
-  padding:11px 17px;
-  background:#172033;
-  color:#fff!important;
-  border-radius:10px;
-}
-
-.nav-cta:hover{
-  background:#635bff;
+.nav-button{
+  background:var(--text);
+  color:white !important;
+  padding:11px 18px;
+  border-radius:12px;
 }
 
 /* HERO */
 
 .hero{
-  padding:90px 0 80px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(99,91,255,.10),transparent 28%),
-    radial-gradient(circle at 20% 80%,rgba(139,92,246,.07),transparent 25%);
+  padding:90px 0 70px;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:70px;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
   align-items:center;
 }
 
@@ -121,41 +123,40 @@ header{
   align-items:center;
   gap:8px;
   padding:8px 13px;
-  border-radius:50px;
-  background:#eeefff;
-  border:1px solid #dedfff;
-  color:#5852dc;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:white;
+  color:var(--primary);
   font-size:12px;
-  font-weight:700;
-  margin-bottom:20px;
+  font-weight:800;
+  margin-bottom:22px;
 }
 
 .badge-dot{
   width:7px;
   height:7px;
   border-radius:50%;
-  background:#635bff;
+  background:#20a464;
 }
 
 .hero h1{
-  max-width:680px;
-  font-size:clamp(42px,5.5vw,68px);
-  line-height:1.04;
+  font-size:clamp(42px,6vw,70px);
+  line-height:1.03;
   letter-spacing:-3px;
   margin-bottom:22px;
 }
 
-.gradient-text{
-  background:linear-gradient(90deg,#5b55f4,#8b5cf6);
+.hero h1 span{
+  background:linear-gradient(135deg,var(--primary),var(--purple));
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
-.hero-description{
-  max-width:570px;
-  color:#6d7789;
+.hero-text{
+  color:var(--muted);
   font-size:18px;
+  max-width:580px;
   margin-bottom:30px;
 }
 
@@ -167,412 +168,362 @@ header{
 
 .btn{
   min-height:48px;
-  padding:0 20px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  border-radius:11px;
+  gap:8px;
+  padding:0 20px;
+  border-radius:14px;
   font-size:14px;
-  font-weight:700;
-  transition:.2s ease;
+  font-weight:800;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s;
 }
 
 .btn-primary{
-  background:#635bff;
-  color:#fff;
-  box-shadow:0 12px 25px rgba(99,91,255,.22);
+  background:var(--primary);
+  color:white;
+  box-shadow:0 12px 28px rgba(103,87,232,.22);
 }
 
 .btn-primary:hover{
+  background:var(--primary-dark);
   transform:translateY(-2px);
-  background:#5149ed;
 }
 
-.btn-secondary{
-  background:#fff;
-  border:1px solid #dfe3ec;
-  color:#273146;
+.btn-whatsapp{
+  background:var(--green);
+  color:white;
 }
 
-.btn-secondary:hover{
+.btn-whatsapp:hover{
+  background:#1ebe5d;
   transform:translateY(-2px);
-  border-color:#bdc4d2;
 }
 
-/* HERO CARD */
+.btn-dark{
+  background:var(--text);
+  color:white;
+}
+
+.btn-outline{
+  background:white;
+  border-color:var(--border);
+}
+
+/* HERO PREVIEW */
 
 .hero-preview{
   position:relative;
-  min-height:450px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  min-height:420px;
 }
 
 .dashboard{
-  width:100%;
-  max-width:470px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:28px;
   padding:18px;
-  border:1px solid #e2e6ee;
-  border-radius:23px;
-  background:#fff;
-  box-shadow:0 30px 75px rgba(30,40,70,.13);
+  box-shadow:var(--shadow);
   transform:rotate(1deg);
 }
 
-.dashboard-header{
+.dashboard-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-bottom:15px;
-  border-bottom:1px solid #edf0f5;
+  margin-bottom:18px;
 }
 
-.profile{
+.dots{
   display:flex;
-  align-items:center;
-  gap:10px;
+  gap:6px;
 }
 
-.avatar{
-  width:38px;
-  height:38px;
-  display:grid;
-  place-items:center;
+.dots span{
+  width:8px;
+  height:8px;
   border-radius:50%;
-  background:#eeefff;
-  color:#5d57e8;
-  font-weight:800;
+  background:#ddd9e8;
 }
 
-.profile-name{
-  font-size:13px;
-  font-weight:800;
-}
-
-.profile-type{
+.preview-label{
+  color:#918c9e;
   font-size:10px;
-  color:#8992a2;
-}
-
-.active{
-  padding:6px 9px;
-  border-radius:7px;
-  background:#ecf8f0;
-  color:#278451;
-  font-size:9px;
   font-weight:800;
 }
 
-.digital-card{
-  position:relative;
-  overflow:hidden;
-  min-height:205px;
-  margin-top:18px;
+.business-card{
+  min-height:300px;
+  border-radius:22px;
   padding:25px;
-  border-radius:17px;
-  color:#fff;
-  background:linear-gradient(135deg,#202743,#5b59a8);
+  color:white;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(255,255,255,.25),transparent 28%),
+    linear-gradient(135deg,#272143,#6958e8 70%,#9a70f5);
 }
 
-.digital-card:after{
-  content:"";
-  position:absolute;
-  width:210px;
-  height:210px;
-  right:-80px;
-  top:-80px;
-  border-radius:50%;
-  background:rgba(255,255,255,.08);
-}
-
-.digital-card small{
-  opacity:.65;
-  font-size:9px;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-}
-
-.digital-card h3{
-  position:relative;
-  z-index:2;
-  margin-top:35px;
-  font-size:26px;
-}
-
-.digital-card p{
-  position:relative;
-  z-index:2;
-  opacity:.75;
-  font-size:12px;
-}
-
-.card-actions{
-  position:absolute;
-  z-index:3;
-  left:25px;
-  bottom:20px;
-  display:flex;
-  gap:7px;
-}
-
-.card-action{
-  padding:5px 8px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:6px;
-  font-size:9px;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-  margin-top:15px;
-}
-
-.stat{
-  padding:13px;
-  border-radius:12px;
-  background:#f6f7fb;
-}
-
-.stat strong{
-  display:block;
-  font-size:16px;
-}
-
-.stat span{
-  font-size:9px;
-  color:#8992a2;
-}
-
-.floating{
-  position:absolute;
-  padding:13px 15px;
-  border:1px solid #e3e6ed;
-  border-radius:12px;
-  background:#fff;
-  box-shadow:0 15px 35px rgba(30,40,70,.12);
+.card-small{
   font-size:11px;
-  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  opacity:.75;
 }
 
-.float-left{
-  left:-8px;
-  top:65px;
+.business-card h3{
+  margin-top:75px;
+  font-size:32px;
+  letter-spacing:-1px;
 }
 
-.float-right{
-  right:-8px;
-  bottom:65px;
+.business-card p{
+  font-size:13px;
+  opacity:.8;
+}
+
+.card-contact{
+  margin-top:90px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:11px;
+  opacity:.8;
+}
+
+.price-float{
+  position:absolute;
+  left:-25px;
+  bottom:30px;
+  padding:15px 18px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:white;
+  box-shadow:0 16px 35px rgba(40,30,80,.14);
+}
+
+.price-float strong{
+  display:block;
+  font-size:20px;
+}
+
+.price-float span{
+  color:var(--muted);
+  font-size:11px;
 }
 
 /* TRUST */
 
 .trust{
-  padding:25px 0 65px;
+  padding:10px 0 70px;
 }
 
-.trust-title{
-  text-align:center;
-  color:#939aaa;
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1.4px;
-}
-
-.trust-list{
-  margin-top:20px;
+.trust-box{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px 25px;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
   flex-wrap:wrap;
-  gap:30px;
-  color:#667083;
-  font-size:13px;
-  font-weight:700;
+  gap:15px;
 }
 
-/* COMMON SECTION */
+.trust-item{
+  color:#777286;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* GENERAL SECTIONS */
 
 section{
-  padding:90px 0;
+  padding:85px 0;
 }
 
-.section-heading{
+.section-head{
   max-width:680px;
-  margin-bottom:45px;
+  margin-bottom:42px;
 }
 
-.section-label{
-  margin-bottom:10px;
-  color:#625bf1;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.5px;
+.eyebrow{
+  color:var(--primary);
+  font-size:12px;
+  font-weight:900;
   text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:9px;
 }
 
-.section-heading h2{
+.section-head h2{
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.08;
+  letter-spacing:-2px;
   margin-bottom:14px;
-  font-size:clamp(30px,4vw,46px);
-  line-height:1.1;
-  letter-spacing:-1.7px;
 }
 
-.section-heading p{
-  color:#737d8f;
-  font-size:15px;
+.section-head p{
+  color:var(--muted);
 }
 
 /* SERVICES */
 
 .services{
-  background:#fff;
-  border-top:1px solid #e9ecf2;
-  border-bottom:1px solid #e9ecf2;
+  background:white;
 }
 
 .service-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
+  gap:18px;
 }
 
 .service-card{
-  padding:27px;
-  border:1px solid #e2e6ed;
-  border-radius:18px;
-  background:#fff;
-  transition:.25s ease;
+  padding:25px;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background:white;
+  transition:.25s;
 }
 
 .service-card:hover{
-  transform:translateY(-6px);
-  border-color:#cfd2ff;
-  box-shadow:0 20px 45px rgba(30,40,70,.08);
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(40,30,80,.09);
 }
 
-.service-icon{
-  width:46px;
-  height:46px;
+.icon{
+  width:50px;
+  height:50px;
+  border-radius:15px;
   display:grid;
   place-items:center;
-  margin-bottom:20px;
-  border-radius:13px;
-  background:#f0f0ff;
-  color:#625bf1;
-  font-size:20px;
+  background:#f0edff;
+  color:var(--primary);
+  font-size:22px;
+  margin-bottom:18px;
 }
 
 .service-card h3{
+  font-size:18px;
   margin-bottom:8px;
-  font-size:17px;
 }
 
 .service-card p{
-  min-height:82px;
-  margin-bottom:17px;
-  color:#778194;
-  font-size:12px;
-}
-
-.service-price{
-  color:#5751e5;
+  color:var(--muted);
   font-size:13px;
-  font-weight:800;
+  min-height:66px;
+  margin-bottom:17px;
 }
 
-/* WHY */
+.price{
+  font-size:23px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.price small{
+  color:var(--muted);
+  font-size:11px;
+  font-weight:700;
+}
+
+.order-btn{
+  width:100%;
+}
+
+  /* WHY BIZCRAFT */
+
+.why{
+  background:var(--bg);
+}
 
 .why-grid{
   display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:70px;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
   align-items:center;
 }
 
-.why-visual{
-  position:relative;
-  min-height:390px;
-  padding:30px;
-  overflow:hidden;
-  border-radius:25px;
-  background:#eef0ff;
+.visual-box{
+  padding:22px;
+  border-radius:30px;
+  background:linear-gradient(145deg,#f0edff,#ffffff);
+  border:1px solid var(--border);
 }
 
-.why-screen{
-  position:relative;
-  z-index:2;
+.feature{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
   padding:21px;
-  border-radius:18px;
-  background:#fff;
-  box-shadow:0 20px 50px rgba(40,50,90,.12);
+  margin-bottom:13px;
 }
 
-.screen-top{
-  width:100px;
-  height:9px;
-  margin-bottom:20px;
-  border-radius:10px;
-  background:#e7e9f0;
+.feature:last-child{
+  margin-bottom:0;
 }
 
-.screen-line{
-  height:8px;
-  margin-bottom:9px;
-  border-radius:10px;
-  background:#eef0f4;
-}
-
-.screen-line.short{
-  width:58%;
-}
-
-.screen-main{
-  height:120px;
-  margin-top:20px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#635bff,#8b5cf6);
-}
-
-.benefits{
-  display:grid;
-  gap:22px;
-}
-
-.benefit{
+.feature-row{
   display:flex;
   gap:14px;
 }
 
-.benefit-number{
-  flex:0 0 35px;
-  width:35px;
-  height:35px;
+.feature-icon{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
   display:grid;
   place-items:center;
-  border-radius:10px;
-  background:#eeefff;
-  color:#5d57e8;
-  font-size:11px;
-  font-weight:800;
+  border-radius:11px;
+  background:#f0edff;
+  color:var(--primary);
+  font-weight:900;
+}
+
+.feature h3{
+  font-size:16px;
+  margin-bottom:4px;
+}
+
+.feature p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.benefits{
+  display:grid;
+  gap:18px;
+}
+
+.benefit{
+  display:flex;
+  gap:13px;
+}
+
+.benefit-icon{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#f0edff;
+  color:var(--primary);
 }
 
 .benefit h3{
-  margin-bottom:3px;
   font-size:16px;
+  margin-bottom:3px;
 }
 
 .benefit p{
-  color:#778194;
-  font-size:12px;
+  color:var(--muted);
+  font-size:13px;
 }
 
 /* PRICING */
 
 .pricing{
-  background:#f0f2f8;
+  background:white;
 }
 
 .pricing-grid{
@@ -584,51 +535,55 @@ section{
 .price-card{
   position:relative;
   padding:30px;
-  border:1px solid #e0e4ed;
-  border-radius:20px;
-  background:#fff;
+  border:1px solid var(--border);
+  border-radius:25px;
+  background:white;
 }
 
-.price-card.featured{
-  border:2px solid #635bff;
-  box-shadow:0 22px 55px rgba(70,70,170,.13);
+.price-card.popular{
+  border:2px solid var(--primary);
+  box-shadow:0 22px 55px rgba(103,87,232,.12);
 }
 
 .popular{
+  position:relative;
+}
+
+.popular-tag{
   position:absolute;
-  top:17px;
-  right:17px;
-  padding:6px 9px;
-  border-radius:7px;
-  background:#635bff;
-  color:#fff;
-  font-size:8px;
-  font-weight:800;
-  text-transform:uppercase;
+  top:18px;
+  right:18px;
+  background:#eeeaff;
+  color:var(--primary);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
 }
 
 .price-card h3{
-  margin-bottom:7px;
   font-size:19px;
+  margin-bottom:12px;
 }
 
-.price-description{
-  min-height:40px;
-  color:#7b8495;
-  font-size:12px;
-}
-
-.price{
-  margin:20px 0;
-  font-size:38px;
+.big-price{
+  font-size:40px;
   font-weight:900;
-  letter-spacing:-1px;
+  letter-spacing:-2px;
+  margin-bottom:6px;
 }
 
-.price span{
-  color:#8a93a3;
-  font-size:11px;
-  font-weight:500;
+.big-price span{
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:0;
+}
+
+.description{
+  color:var(--muted);
+  font-size:13px;
+  min-height:52px;
+  margin-bottom:20px;
 }
 
 .features{
@@ -639,19 +594,15 @@ section{
 }
 
 .features li{
-  color:#667184;
-  font-size:12px;
+  color:#555064;
+  font-size:13px;
 }
 
-.features li:before{
+.features li::before{
   content:"✓";
-  margin-right:8px;
-  color:#635bff;
+  color:#20a464;
   font-weight:900;
-}
-
-.full{
-  width:100%;
+  margin-right:9px;
 }
 
 /* PROCESS */
@@ -662,265 +613,214 @@ section{
   gap:18px;
 }
 
-.step{
-  padding:25px;
-  border:1px solid #e2e6ed;
-  border-radius:17px;
-  background:#fff;
+.process-card{
+  padding:24px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
 }
 
-.step-number{
+.step{
   width:38px;
   height:38px;
+  border-radius:12px;
   display:grid;
   place-items:center;
-  margin-bottom:19px;
-  border-radius:50%;
-  background:#172033;
-  color:#fff;
-  font-size:11px;
-  font-weight:800;
-}
-
-.step h3{
-  margin-bottom:7px;
-  font-size:16px;
-}
-
-.step p{
-  color:#788294;
+  background:#f0edff;
+  color:var(--primary);
   font-size:12px;
+  font-weight:900;
+  margin-bottom:17px;
 }
 
-/* CONTINUE IN PART 2 */
+.process-card h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
 
-  /* CTA */
+.process-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CTA */
 
 .cta{
-  padding:80px 0;
+  padding:30px 0 85px;
 }
 
 .cta-box{
   position:relative;
   overflow:hidden;
-  padding:65px 30px;
-  border-radius:25px;
-  text-align:center;
-  color:#fff;
-  background:linear-gradient(135deg,#202641,#5655a5);
+  padding:55px;
+  border-radius:30px;
+  color:white;
+  background:linear-gradient(135deg,#29234a,#6757e8 65%,#8d65ed);
 }
 
 .cta-box h2{
-  position:relative;
-  z-index:2;
-  max-width:700px;
-  margin:0 auto 15px;
+  max-width:650px;
   font-size:clamp(30px,4vw,46px);
-  line-height:1.1;
-  letter-spacing:-1.5px;
+  line-height:1.08;
+  letter-spacing:-2px;
+  margin-bottom:14px;
 }
 
 .cta-box p{
-  position:relative;
-  z-index:2;
-  max-width:580px;
-  margin:0 auto 28px;
+  max-width:620px;
   color:rgba(255,255,255,.75);
-  font-size:14px;
-}
-
-.cta-box .btn{
-  position:relative;
-  z-index:2;
-  background:#fff;
-  border-color:#fff;
+  margin-bottom:25px;
 }
 
 /* CONTACT */
 
 .contact{
-  background:#fff;
-  border-top:1px solid #e8ebf1;
+  background:white;
 }
 
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-}
-
-.contact-text h2{
-  margin-bottom:14px;
-  font-size:clamp(30px,4vw,42px);
-  line-height:1.1;
-  letter-spacing:-1.4px;
-}
-
-.contact-text p{
-  max-width:520px;
-  color:#737d8e;
-  font-size:14px;
+  gap:25px;
 }
 
 .contact-card{
-  padding:28px;
-  border:1px solid #e1e5ed;
-  border-radius:19px;
-  background:#f9faff;
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:25px;
+  background:#fcfbff;
 }
 
-.contact-row{
-  padding:15px 0;
-  border-bottom:1px solid #e5e8ef;
+.contact-card h3{
+  font-size:21px;
+  margin-bottom:9px;
 }
 
-.contact-row:last-of-type{
-  border-bottom:0;
+.contact-card p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
 }
 
-.contact-label{
-  color:#8b94a4;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
+.contact-info{
+  display:grid;
+  gap:12px;
 }
 
-.contact-value{
-  margin-top:4px;
-  font-size:13px;
-  font-weight:700;
+.contact-line{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:14px;
+  background:white;
+  border:1px solid var(--border);
+}
+
+.contact-icon{
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:#f0edff;
+  color:var(--primary);
+}
+
+.contact-line strong{
+  display:block;
+  font-size:12px;
+}
+
+.contact-line span{
+  color:var(--muted);
+  font-size:12px;
 }
 
 /* FOOTER */
 
 footer{
-  padding:45px 0 25px;
-  color:#fff;
-  background:#151b2d;
+  padding:28px 0;
+  background:#17152a;
+  color:white;
 }
 
-.footer-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:35px;
-  padding-bottom:35px;
-}
-
-.footer-brand p{
-  max-width:330px;
-  margin-top:12px;
-  color:#929aaa;
-  font-size:12px;
-}
-
-.footer-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:24px;
-  color:#b8bfcd;
-  font-size:12px;
-}
-
-.footer-links a:hover{
-  color:#fff;
-}
-
-.footer-bottom{
+.footer-row{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.08);
-  color:#7e8799;
-  font-size:10px;
 }
 
-/* TABLET */
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-weight:900;
+}
+
+.footer-mark{
+  width:30px;
+  height:30px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--purple));
+}
+
+footer p{
+  color:#9b97a9;
+  font-size:12px;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:950px){
 
-  .hero-grid{
+  .hero-grid,
+  .why-grid{
     grid-template-columns:1fr;
-    gap:45px;
-  }
-
-  .hero{
-    padding-top:65px;
   }
 
   .hero-preview{
-    min-height:430px;
+    max-width:650px;
+    margin:auto;
   }
 
   .service-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .why-grid{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .pricing-grid{
-    grid-template-columns:1fr;
-    max-width:560px;
-    margin:auto;
-  }
-
   .process-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .contact-grid{
+  .pricing-grid{
     grid-template-columns:1fr;
+    max-width:600px;
   }
 }
 
-/* MOBILE */
-
 @media(max-width:680px){
 
-  .nav{
-    min-height:65px;
+  .nav-links{
+    gap:8px;
   }
 
-  .nav-links{
+  .nav-links a:not(.nav-button){
     display:none;
   }
 
-  .logo{
-    font-size:19px;
-  }
-
-  .logo-mark{
-    width:36px;
-    height:36px;
-  }
-
-  .nav:after{
-    content:"Menu";
-    padding:8px 12px;
-    border-radius:9px;
-    background:#172033;
-    color:#fff;
-    font-size:11px;
-    font-weight:700;
-  }
-
   .hero{
-    padding:55px 0 45px;
+    padding:55px 0;
   }
 
   .hero h1{
-    font-size:42px;
     letter-spacing:-2px;
   }
 
-  .hero-description{
-    font-size:15px;
+  .hero-text{
+    font-size:16px;
   }
 
   .hero-buttons{
@@ -931,12 +831,26 @@ footer{
     width:100%;
   }
 
-  .hero-preview{
-    min-height:350px;
+  .dashboard{
+    transform:none;
   }
 
-  .floating{
-    display:none;
+  .business-card{
+    min-height:260px;
+  }
+
+  .business-card h3{
+    margin-top:55px;
+    font-size:27px;
+  }
+
+  .card-contact{
+    margin-top:70px;
+  }
+
+  .price-float{
+    left:8px;
+    bottom:-20px;
   }
 
   section{
@@ -944,72 +858,34 @@ footer{
   }
 
   .service-grid,
-  .process-grid{
+  .process-grid,
+  .contact-grid{
     grid-template-columns:1fr;
   }
 
-  .service-card{
-    padding:23px;
-  }
-
-  .service-card p{
-    min-height:auto;
-  }
-
-  .why-visual{
-    min-height:300px;
-    padding:20px;
-  }
-
   .cta-box{
-    padding:48px 20px;
-    border-radius:20px;
+    padding:35px 25px;
   }
 
-  .footer-top,
-  .footer-bottom{
+  .footer-row{
     flex-direction:column;
-  }
-
-  .footer-links{
-    gap:15px;
-  }
-
-  .stats{
-    gap:6px;
-  }
-
-  .stat{
-    padding:10px;
-  }
-
-  .digital-card{
-    min-height:180px;
-    padding:20px;
-  }
-
-  .digital-card h3{
-    margin-top:27px;
-    font-size:21px;
+    align-items:flex-start;
   }
 }
 
 @media(max-width:390px){
 
+  .logo{
+    font-size:19px;
+  }
+
+  .nav-button{
+    padding:9px 12px;
+    font-size:12px;
+  }
+
   .hero h1{
-    font-size:36px;
-  }
-
-  .dashboard{
-    padding:12px;
-  }
-
-  .digital-card{
-    min-height:170px;
-  }
-
-  .price{
-    font-size:34px;
+    font-size:39px;
   }
 }
 </style>
@@ -1020,7 +896,7 @@ footer{
 <header>
   <div class="container nav">
 
-    <a href="#" class="logo">
+    <a href="#home" class="logo">
       <span class="logo-mark">B</span>
       BizCraft
     </a>
@@ -1029,18 +905,17 @@ footer{
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#process">How It Works</a>
-      <a href="#contact" class="nav-cta">Get Started</a>
+      <a href="#contact" class="nav-button">Get Started</a>
     </nav>
 
   </div>
 </header>
 
-
 <main>
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
   <div class="container hero-grid">
 
@@ -1048,17 +923,17 @@ footer{
 
       <div class="badge">
         <span class="badge-dot"></span>
-        Digital services for growing businesses
+        Digital solutions for growing businesses
       </div>
 
       <h1>
-        Build a business people
-        <span class="gradient-text">remember.</span>
+        Build a business
+        <span>people remember.</span>
       </h1>
 
-      <p class="hero-description">
-        BizCraft helps small businesses build a professional digital presence
-        with affordable digital cards, promotional designs and websites.
+      <p class="hero-text">
+        BizCraft helps small businesses look professional online with
+        digital visiting cards, promotional designs and modern business websites.
       </p>
 
       <div class="hero-buttons">
@@ -1067,106 +942,60 @@ footer{
           Explore Services →
         </a>
 
-        <a href="#pricing" class="btn btn-secondary">
-          View Pricing
+        <a
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20know%20more%20about%20your%20services."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp">
+          WhatsApp Us
         </a>
 
       </div>
 
     </div>
 
-
     <div class="hero-preview">
-
-      <div class="floating float-left">
-        ✓ Professional Design
-      </div>
 
       <div class="dashboard">
 
-        <div class="dashboard-header">
+        <div class="dashboard-top">
 
-          <div class="profile">
-
-            <div class="avatar">
-              R
-            </div>
-
-            <div>
-              <div class="profile-name">
-                Rajesh Traders
-              </div>
-
-              <div class="profile-type">
-                Business Profile
-              </div>
-            </div>
-
+          <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
 
-          <div class="active">
-            ACTIVE
+          <div class="preview-label">
+            BIZCRAFT PREVIEW
           </div>
 
         </div>
 
+        <div class="business-card">
 
-        <div class="digital-card">
-
-          <small>
+          <div class="card-small">
             Digital Business Card
-          </small>
+          </div>
 
-          <h3>
-            Rajesh Traders
-          </h3>
+          <h3>Rajesh Traders</h3>
 
           <p>
-            Electrical & Hardware Store
+            Quality products. Trusted service.
           </p>
 
-          <div class="card-actions">
-
-            <span class="card-action">
-              Call
-            </span>
-
-            <span class="card-action">
-              WhatsApp
-            </span>
-
-            <span class="card-action">
-              Location
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="stats">
-
-          <div class="stat">
-            <strong>₹99</strong>
-            <span>Starting</span>
-          </div>
-
-          <div class="stat">
-            <strong>24h</strong>
-            <span>Fast delivery</span>
-          </div>
-
-          <div class="stat">
-            <strong>100%</strong>
-            <span>Digital</span>
+          <div class="card-contact">
+            <span>📞 +91 98765 43210</span>
+            <span>📍 Your City</span>
           </div>
 
         </div>
 
       </div>
 
-      <div class="floating float-right">
-        ⚡ Fast & Affordable
+      <div class="price-float">
+        <strong>₹99</strong>
+        <span>Starting price</span>
       </div>
 
     </div>
@@ -1174,7 +1003,6 @@ footer{
   </div>
 
 </section>
-
 
 <!-- TRUST -->
 
@@ -1182,22 +1010,19 @@ footer{
 
   <div class="container">
 
-    <div class="trust-title">
-      Designed for businesses of all sizes
-    </div>
+    <div class="trust-box">
 
-    <div class="trust-list">
-      <span>Local Shops</span>
-      <span>Restaurants</span>
-      <span>Freelancers</span>
-      <span>Professionals</span>
-      <span>Small Businesses</span>
+      <div class="trust-item">Local Shops</div>
+      <div class="trust-item">Restaurants</div>
+      <div class="trust-item">Freelancers</div>
+      <div class="trust-item">Professionals</div>
+      <div class="trust-item">Small Businesses</div>
+
     </div>
 
   </div>
 
 </div>
-
 
 <!-- SERVICES -->
 
@@ -1205,113 +1030,129 @@ footer{
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-head">
 
-      <div class="section-label">
-        Our Services
-      </div>
+      <div class="eyebrow">Our Services</div>
 
       <h2>
-        Digital tools that help your business stand out.
+        Everything your business needs to look professional.
       </h2>
 
       <p>
-        Start with one service or choose a complete package for your business.
+        Choose a service and contact BizCraft directly through WhatsApp.
       </p>
 
     </div>
 
-
     <div class="service-grid">
 
+      <!-- DIGITAL CARD -->
 
       <div class="service-card">
 
-        <div class="service-icon">
-          ▣
-        </div>
+        <div class="icon">▣</div>
 
-        <h3>
-          Digital Visiting Card
-        </h3>
+        <h3>Digital Visiting Card</h3>
 
         <p>
-          A modern shareable business card containing your contact,
-          services, location and social links.
+          A professional digital card that customers can open and share
+          instantly from their phone.
         </p>
 
-        <div class="service-price">
-          Starting ₹99
+        <div class="price">
+          ₹99 <small>starting</small>
         </div>
+
+        <a
+          class="btn btn-whatsapp order-btn"
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20a%20Digital%20Visiting%20Card%20for%20%E2%82%B999.%0A%0ABusiness%20Name%3A%20"
+          target="_blank"
+          rel="noopener">
+          Order on WhatsApp
+        </a>
 
       </div>
 
+      <!-- POSTER -->
 
       <div class="service-card">
 
-        <div class="service-icon">
-          ✦
-        </div>
+        <div class="icon">✦</div>
 
-        <h3>
-          Promotional Poster
-        </h3>
+        <h3>Promotional Poster</h3>
 
         <p>
-          Professional promotional designs for offers, products,
-          festivals and business announcements.
+          Eye-catching promotional artwork for offers, products,
+          services and social media.
         </p>
 
-        <div class="service-price">
-          Starting ₹149
+        <div class="price">
+          ₹149 <small>starting</small>
         </div>
+
+        <a
+          class="btn btn-whatsapp order-btn"
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20a%20Promotional%20Poster%20for%20%E2%82%B9149.%0A%0ABusiness%20Name%3A%20"
+          target="_blank"
+          rel="noopener">
+          Order on WhatsApp
+        </a>
 
       </div>
 
+      <!-- WEBSITE -->
 
       <div class="service-card">
 
-        <div class="service-icon">
-          ⌘
-        </div>
+        <div class="icon">⌘</div>
 
-        <h3>
-          Business Website
-        </h3>
+        <h3>Business Website</h3>
 
         <p>
-          A clean responsive website that showcases your business,
-          services and contact information.
+          A modern responsive website for your business with services,
+          contact information and WhatsApp integration.
         </p>
 
-        <div class="service-price">
-          Starting ₹999
+        <div class="price">
+          ₹999 <small>starting</small>
         </div>
+
+        <a
+          class="btn btn-whatsapp order-btn"
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20a%20Business%20Website%20for%20%E2%82%B9999.%0A%0ABusiness%20Name%3A%20"
+          target="_blank"
+          rel="noopener">
+          Order on WhatsApp
+        </a>
 
       </div>
 
+      <!-- COMBO -->
 
       <div class="service-card">
 
-        <div class="service-icon">
-          ◆
-        </div>
+        <div class="icon">◆</div>
 
-        <h3>
-          Business Combo
-        </h3>
+        <h3>Business Combo</h3>
 
         <p>
-          Get a digital card, QR code and two promotional posters
-          together in one affordable package.
+          Digital visiting card, QR code and two promotional posters
+          together at an affordable price.
         </p>
 
-        <div class="service-price">
-          Starting ₹299
+        <div class="price">
+          ₹299 <small>starting</small>
         </div>
 
-      </div>
+        <a
+          class="btn btn-whatsapp order-btn"
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20the%20Business%20Combo%20for%20%E2%82%B9299.%0A%0ABusiness%20Name%3A%20"
+          target="_blank"
+          rel="noopener">
+          Order on WhatsApp
+        </a>
 
+      </div>
 
     </div>
 
@@ -1319,145 +1160,126 @@ footer{
 
 </section>
 
+  <!-- WHY BIZCRAFT -->
 
-<!-- WHY BIZCRAFT -->
-
-<section>
+<section class="why" id="why">
 
   <div class="container why-grid">
 
+    <div class="visual-box">
 
-    <div class="why-visual">
+      <div class="feature">
 
-      <div class="why-screen">
+        <div class="feature-row">
 
-        <div class="screen-top"></div>
+          <div class="feature-icon">✓</div>
 
-        <div class="screen-line"></div>
+          <div>
+            <h3>Professional Design</h3>
+            <p>
+              Clean and modern designs that help your business make
+              a strong first impression.
+            </p>
+          </div>
 
-        <div class="screen-line short"></div>
+        </div>
 
-        <div class="screen-main"></div>
+      </div>
 
-        <div class="screen-line" style="margin-top:20px;"></div>
+      <div class="feature">
 
-        <div class="screen-line short"></div>
+        <div class="feature-row">
+
+          <div class="feature-icon">✓</div>
+
+          <div>
+            <h3>Mobile Friendly</h3>
+            <p>
+              Digital products designed to work beautifully on phones,
+              tablets and computers.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-row">
+
+          <div class="feature-icon">✓</div>
+
+          <div>
+            <h3>Simple Ordering</h3>
+            <p>
+              Customers can contact you directly through WhatsApp
+              to place an order.
+            </p>
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
-
     <div>
 
-      <div class="section-heading">
+      <div class="section-head">
 
-        <div class="section-label">
-          Why BizCraft
-        </div>
+        <div class="eyebrow">Why BizCraft</div>
 
         <h2>
-          Professional doesn't have to mean expensive.
+          Simple digital tools for real businesses.
         </h2>
 
         <p>
-          We create practical digital products that small businesses
-          can afford and actually use.
+          Professional digital services without a complicated process.
         </p>
 
       </div>
 
-
       <div class="benefits">
 
-
         <div class="benefit">
 
-          <div class="benefit-number">
-            01
-          </div>
+          <div class="benefit-icon">⚡</div>
 
           <div>
-
-            <h3>
-              Affordable pricing
-            </h3>
-
+            <h3>Fast & Simple</h3>
             <p>
-              Start with a small digital product instead of spending
-              thousands on an agency.
+              Tell us what you need and we'll create it for you.
             </p>
-
           </div>
 
         </div>
 
-
         <div class="benefit">
 
-          <div class="benefit-number">
-            02
-          </div>
+          <div class="benefit-icon">₹</div>
 
           <div>
-
-            <h3>
-              Mobile-friendly
-            </h3>
-
+            <h3>Affordable Pricing</h3>
             <p>
-              Your digital presence works smoothly across phones,
-              tablets and computers.
+              Professional digital services starting from ₹99.
             </p>
-
           </div>
 
         </div>
 
-
         <div class="benefit">
 
-          <div class="benefit-number">
-            03
-          </div>
+          <div class="benefit-icon">↗</div>
 
           <div>
-
-            <h3>
-              Simple process
-            </h3>
-
+            <h3>Built to Grow</h3>
             <p>
-              Tell us what you need and we build the digital product
-              around your business.
+              Start small and add more digital services as your business grows.
             </p>
-
           </div>
 
         </div>
-
-
-        <div class="benefit">
-
-          <div class="benefit-number">
-            04
-          </div>
-
-          <div>
-
-            <h3>
-              Made for real businesses
-            </h3>
-
-            <p>
-              Designed for shops, restaurants, freelancers and
-              independent professionals.
-            </p>
-
-          </div>
-
-        </div>
-
 
       </div>
 
@@ -1466,7 +1288,6 @@ footer{
   </div>
 
 </section>
-
 
 <!-- PRICING -->
 
@@ -1474,126 +1295,124 @@ footer{
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-head">
 
-      <div class="section-label">
-        Simple Pricing
-      </div>
+      <div class="eyebrow">Pricing</div>
 
       <h2>
-        Choose what your business needs.
+        Start with what your business needs.
       </h2>
 
       <p>
-        Start small and upgrade whenever your business needs more.
+        Simple starting prices for small businesses.
       </p>
 
     </div>
 
-
     <div class="pricing-grid">
 
+      <!-- CARD -->
 
       <div class="price-card">
 
-        <h3>
-          Digital Card
-        </h3>
+        <h3>Digital Card</h3>
 
-        <p class="price-description">
-          A professional digital identity for your business.
-        </p>
-
-        <div class="price">
-          ₹99
-          <span>/ starting</span>
+        <div class="big-price">
+          ₹99 <span>/ starting</span>
         </div>
+
+        <p class="description">
+          A professional digital visiting card for your business.
+        </p>
 
         <ul class="features">
           <li>Business information</li>
-          <li>Phone & WhatsApp buttons</li>
-          <li>Social links</li>
-          <li>Location section</li>
-          <li>Mobile-friendly design</li>
+          <li>Contact buttons</li>
+          <li>Shareable digital card</li>
+          <li>Mobile friendly</li>
         </ul>
 
-        <a href="#contact" class="btn btn-secondary full">
+        <a
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20a%20Digital%20Visiting%20Card%20for%20%E2%82%B999."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp order-btn">
           Order Now
         </a>
 
       </div>
 
+      <!-- COMBO -->
 
-      <div class="price-card featured">
+      <div class="price-card popular">
 
-        <div class="popular">
-          Popular
+        <div class="popular-tag">
+          POPULAR
         </div>
 
-        <h3>
-          Business Combo
-        </h3>
+        <h3>Business Combo</h3>
 
-        <p class="price-description">
-          A complete starter package for a growing business.
+        <div class="big-price">
+          ₹299 <span>/ starting</span>
+        </div>
+
+        <p class="description">
+          Digital card, QR code and two promotional posters together.
         </p>
-
-        <div class="price">
-          ₹299
-          <span>/ starting</span>
-        </div>
 
         <ul class="features">
           <li>Digital visiting card</li>
           <li>QR code</li>
           <li>2 promotional posters</li>
-          <li>Mobile-friendly design</li>
-          <li>Ready-to-share files</li>
+          <li>Mobile friendly designs</li>
         </ul>
 
-        <a href="#contact" class="btn btn-primary full">
-          Choose Combo
+        <a
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20the%20Business%20Combo%20for%20%E2%82%B9299."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp order-btn">
+          Order Now
         </a>
 
       </div>
 
+      <!-- WEBSITE -->
 
       <div class="price-card">
 
-        <h3>
-          Business Website
-        </h3>
+        <h3>Business Website</h3>
 
-        <p class="price-description">
-          A professional website for your business.
-        </p>
-
-        <div class="price">
-          ₹999
-          <span>/ starting</span>
+        <div class="big-price">
+          ₹999 <span>/ starting</span>
         </div>
 
+        <p class="description">
+          A modern responsive website designed around your business.
+        </p>
+
         <ul class="features">
-          <li>Professional homepage</li>
-          <li>Services section</li>
-          <li>Contact section</li>
-          <li>Responsive design</li>
-          <li>Basic business branding</li>
+          <li>Modern website design</li>
+          <li>Business services section</li>
+          <li>Contact & WhatsApp button</li>
+          <li>Mobile responsive</li>
         </ul>
 
-        <a href="#contact" class="btn btn-secondary full">
-          Start Website
+        <a
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20order%20a%20Business%20Website%20for%20%E2%82%B9999."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp order-btn">
+          Order Now
         </a>
 
       </div>
-
 
     </div>
 
   </div>
 
 </section>
-
 
 <!-- PROCESS -->
 
@@ -1601,100 +1420,59 @@ footer{
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-head">
 
-      <div class="section-label">
-        How It Works
-      </div>
+      <div class="eyebrow">How It Works</div>
 
       <h2>
-        Four simple steps from idea to finished design.
+        From idea to finished product.
       </h2>
 
       <p>
-        No complicated process. Just tell us what your business needs.
+        Getting started is simple.
       </p>
 
     </div>
 
-
     <div class="process-grid">
 
-
-      <div class="step">
-
-        <div class="step-number">
-          01
-        </div>
-
-        <h3>
-          Choose a service
-        </h3>
-
+      <div class="process-card">
+        <div class="step">01</div>
+        <h3>Choose a Service</h3>
         <p>
-          Select a digital card, poster, combo or website.
+          Select the digital product your business needs.
         </p>
-
       </div>
 
-
-      <div class="step">
-
-        <div class="step-number">
-          02
-        </div>
-
-        <h3>
-          Send your details
-        </h3>
-
+      <div class="process-card">
+        <div class="step">02</div>
+        <h3>Send Your Details</h3>
         <p>
-          Share your business name, contact details and requirements.
+          Send your business name, logo, photos and requirements.
         </p>
-
       </div>
 
-
-      <div class="step">
-
-        <div class="step-number">
-          03
-        </div>
-
-        <h3>
-          We create it
-        </h3>
-
+      <div class="process-card">
+        <div class="step">03</div>
+        <h3>We Create It</h3>
         <p>
-          We design your digital product around your business.
+          We'll create your design or website based on your requirements.
         </p>
-
       </div>
 
-
-      <div class="step">
-
-        <div class="step-number">
-          04
-        </div>
-
-        <h3>
-          Receive & use
-        </h3>
-
+      <div class="process-card">
+        <div class="step">04</div>
+        <h3>Receive & Use</h3>
         <p>
-          Get your finished digital product ready to share.
+          Get your finished product and start using it.
         </p>
-
       </div>
-
 
     </div>
 
   </div>
 
 </section>
-
 
 <!-- CTA -->
 
@@ -1705,16 +1483,21 @@ footer{
     <div class="cta-box">
 
       <h2>
-        Ready to make your business look professional?
+        Ready to make your business look more professional?
       </h2>
 
       <p>
-        Start with an affordable digital card, promotional design
-        or business website.
+        Start with a digital card, promotional poster,
+        business website or our complete combo.
       </p>
 
-      <a href="#contact" class="btn">
-        Get Started →
+      <a
+        href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20start%20an%20order."
+        target="_blank"
+        rel="noopener"
+        class="btn"
+        style="background:white;color:#29234a;">
+        Start Your Order →
       </a>
 
     </div>
@@ -1723,82 +1506,92 @@ footer{
 
 </section>
 
-
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-  <div class="container contact-grid">
+  <div class="container">
 
+    <div class="section-head">
 
-    <div class="contact-text">
-
-      <div class="section-label">
-        Get Started
-      </div>
+      <div class="eyebrow">Get Started</div>
 
       <h2>
         Let's build something for your business.
       </h2>
 
       <p>
-        Choose a service and contact BizCraft to discuss your requirements.
-        We'll help you choose the right package.
+        Contact BizCraft directly and tell us what you need.
       </p>
 
     </div>
 
+    <div class="contact-grid">
 
-    <div class="contact-card">
+      <div class="contact-card">
 
+        <h3>Order on WhatsApp</h3>
 
-      <div class="contact-row">
+        <p>
+          The fastest way to place an order is to message us on WhatsApp.
+          Choose a service and we'll discuss the details with you.
+        </p>
 
-        <div class="contact-label">
-          Services
-        </div>
-
-        <div class="contact-value">
-          Digital Card · Poster · Website · Combo
-        </div>
-
-      </div>
-
-
-      <div class="contact-row">
-
-        <div class="contact-label">
-          Starting Price
-        </div>
-
-        <div class="contact-value">
-          From ₹99
-        </div>
+        <a
+          href="https://wa.me/917036586375?text=Hi%20BizCraft%2C%20I%20want%20to%20place%20an%20order."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp">
+          💬 Message on WhatsApp
+        </a>
 
       </div>
 
+      <div class="contact-card">
 
-      <div class="contact-row">
+        <h3>Our Services</h3>
 
-        <div class="contact-label">
-          Contact
-        </div>
+        <p>
+          Choose from our current digital services.
+        </p>
 
-        <div class="contact-value">
-          Your WhatsApp / Email will be added here
+        <div class="contact-info">
+
+          <div class="contact-line">
+            <div class="contact-icon">▣</div>
+            <div>
+              <strong>Digital Visiting Card</strong>
+              <span>Starting from ₹99</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">✦</div>
+            <div>
+              <strong>Promotional Poster</strong>
+              <span>Starting from ₹149</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">⌘</div>
+            <div>
+              <strong>Business Website</strong>
+              <span>Starting from ₹999</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">◆</div>
+            <div>
+              <strong>Business Combo</strong>
+              <span>Starting from ₹299</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
-
-
-      <a
-        href="#"
-        class="btn btn-primary full"
-        onclick="contactMessage(event)"
-      >
-        Contact BizCraft
-      </a>
-
 
     </div>
 
@@ -1808,88 +1601,27 @@ footer{
 
 </main>
 
-
 <!-- FOOTER -->
 
 <footer>
 
-  <div class="container">
+  <div class="container footer-row">
 
-
-    <div class="footer-top">
-
-
-      <div class="footer-brand">
-
-        <div class="logo">
-          <span class="logo-mark">
-            B
-          </span>
-          BizCraft
-        </div>
-
-        <p>
-          Affordable digital services helping small businesses
-          build a professional online presence.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#services">
-          Services
-        </a>
-
-        <a href="#pricing">
-          Pricing
-        </a>
-
-        <a href="#process">
-          How It Works
-        </a>
-
-        <a href="#contact">
-          Contact
-        </a>
-
-      </div>
-
-
+    <div class="footer-logo">
+      <span class="footer-mark">B</span>
+      BizCraft
     </div>
 
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 BizCraft. All rights reserved.
-      </span>
-
-      <span>
-        Digital services for modern businesses.
-      </span>
-
-    </div>
-
+    <p>
+      © <span id="year"></span> BizCraft. All rights reserved.
+    </p>
 
   </div>
 
 </footer>
 
-
 <script>
-
-function contactMessage(event){
-
-  event.preventDefault();
-
-  alert(
-    "Contact details will be added here. Next, we can connect this button to your WhatsApp so customers can contact you directly."
-  );
-
-}
-
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
